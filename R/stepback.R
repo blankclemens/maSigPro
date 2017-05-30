@@ -10,8 +10,8 @@ stepback <- function (y = y, d = d, alfa = 0.05, family = gaussian() , epsilon=0
       }
     }
     while (max > alfa) {
-        varout <- names(result$coefficients[, 4])[result$coefficients[, 
-            4] == max][1]
+        varout <- names(result$coefficients[, 4][-1])[result$coefficients[, 
+            4][-1] == max][1]
         pos <- position(matrix = d, vari = varout)
         d <- d[, -pos]
         if (length(result$coefficients[, 4][-1]) == 2) {
